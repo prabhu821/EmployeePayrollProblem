@@ -8,3 +8,7 @@ create table  employee_payroll(Id int Identity(1,1)Primary Key, Name varchar(100
 --UC3 Insert employee data into employee_payroll table
 Insert into employee_payroll values ('Terisa', 25000, '2019-11-13'), ('Charlies', 30000, '2020-05-21'),
 ('Bill', 35000, '2018-01-03'), ('Mark', 40000, '2018-01-03');
+
+--UC4 Ability to retrieve all the employee payroll data that is added to payroll service database
+select * from employee_payroll;
+

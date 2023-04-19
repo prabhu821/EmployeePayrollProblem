@@ -21,4 +21,23 @@ alter table employee_payroll add Gender varchar(10)
 update employee_payroll set Gender ='M' where Name='Charlie' or Name='Bill' or Name='Mark' or Name='Charlies' ;
 update employee_payroll set Gender ='F' where name='Terisa' ;
 
+--UC7 Ability to find sum, average, min, max and number of male and female employees (using aggregate functions)
+select sum(Salary) as Total_Salary_Of_Male from employee_payroll where Gender='M' Group By Gender;
+select Sum(Salary) as Total_Salary_Of_Female from employee_payroll where Gender = 'F' Group BY Gender;
+select sum(Salary) as Total_Salary_Of_Male_And_Female from employee_payroll;
 
+select Avg(Salary) as Average_Salary_Of_Male from employee_payroll where Gender='M' Group By Gender;
+select Avg(Salary) as Average_Salary_Of_Female from employee_payroll where Gender='F' Group By Gender;
+select Avg(Salary) as Average_Salary_Of_Male_And_Female from employee_payroll ;
+
+select Max(Salary) as Max_Salary_Of_Male from employee_payroll where Gender='M' Group By Gender;
+select Max(Salary) as Max_Salary_Of_Female from employee_payroll where Gender='F' Group By Gender;
+select Max(Salary) as Max_Salary_Of_Male_And_Female from employee_payroll;
+
+select Min(Salary) as Min_Salary_Of_Male from employee_payroll where Gender='M' Group By Gender;
+select Min(Salary) as Min_Salary_Of_Female from employee_payroll where Gender='F' Group By Gender;
+select Min(Salary) as Min_Salary_Of_Male_And_Female from employee_payroll;
+
+select Count(Salary) as Total_Count_Salary_Of_Male from employee_payroll where Gender='M' Group By Gender;
+select Count(Salary) as Total_Count_Salary_Of_Female from employee_payroll where Gender='F' Group By Gender;
+select Count(Salary) as Total_Count_Salary_Of_Male_And_Female from employee_payroll;

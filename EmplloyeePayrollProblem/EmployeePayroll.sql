@@ -16,3 +16,9 @@ select * from employee_payroll;
 select * from employee_payroll where Name= 'Bill';
 select * from employee_payroll where StartDate between cast('2018-01-01' as date ) AND GETDATE();
 
+--UC6 Ability to add Gender to Employee Payroll Table and Update the Rows
+alter table employee_payroll add Gender varchar(10)
+update employee_payroll set Gender ='M' where Name='Charlie' or Name='Bill' or Name='Mark' or Name='Charlies' ;
+update employee_payroll set Gender ='F' where name='Terisa' ;
+
+

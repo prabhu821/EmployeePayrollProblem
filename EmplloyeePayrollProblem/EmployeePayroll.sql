@@ -12,3 +12,7 @@ Insert into employee_payroll values ('Terisa', 25000, '2019-11-13'), ('Charlies'
 --UC4 Ability to retrieve all the employee payroll data that is added to payroll service database
 select * from employee_payroll;
 
+--UC5 Ability to retrieve salary data for a particular employee as well as all employees who have joined in a particular data range from the payroll service database
+select * from employee_payroll where Name= 'Bill';
+select * from employee_payroll where StartDate between cast('2018-01-01' as date ) AND GETDATE();
+

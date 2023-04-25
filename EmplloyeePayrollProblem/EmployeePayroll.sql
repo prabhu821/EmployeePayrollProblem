@@ -75,3 +75,14 @@ alter table employee_payroll1 add Name varchar(100), Gender varchar (1), Salary 
 update employee_payroll1 set Name = 'Jimmy', DepartmentId = 12345, Gender = 'M', Salary = 20000 where Department = 'Finance'
 update employee_payroll1 set Name = 'Satish', DepartmentId = 12346, Gender = 'M', Salary = 24000 where Department = 'Sales'
 update employee_payroll1 set Name = 'Aurora', DepartmentId = 12347, Gender = 'F', Salary = 35000 where Department = 'Marketing'
+
+--UC12 Ensure All Retrieve Queries
+
+alter table employee_payroll1 add Start date
+Insert into employee_payroll1 (EmpId, Department,DepartmentId,Name,Gender,Salary,Start) values ('4','Analyst',12348,'Amaira','F',24000,'2018-01-01'),('5','Testing',12349,'Justin','M',19000,'2020-03-03'),('6','HR',12350,'Salena','F',40000,'2019-05-05')
+
+update employee_payroll1 set Start = '2017-08-09' where Name = 'Jimmy'
+update employee_payroll1 set Start = '2019-08-19' where Name = 'Satish'
+update employee_payroll1 set Start = '2017-10-09' where Name = 'Aurora'
+
+select * from employee_payroll1

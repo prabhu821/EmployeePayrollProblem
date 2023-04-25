@@ -1,6 +1,6 @@
 ﻿--UC1 Ability to create a payroll service database
-create database Payroll;
-use Payroll;
+create database Payroll_Service;
+use Payroll_Service;
 
 --UC2 Ability to create a employee payroll table in the payroll service database 
 create table  employee_payroll(Id int Identity(1,1)Primary Key, Name varchar(100), Salary float, StartDate date);
@@ -56,3 +56,9 @@ update employee_payroll set Basic_Pay=60000, Deductions=25000, Taxable_Pay=3000,
 update employee_payroll set Basic_Pay=50000, Deductions=5000, Taxable_Pay=2000,Income_Tax=1800,Net_Pay=5000000 where Name='Charlies';
 update employee_payroll set Basic_Pay=65000, Deductions=2000, Taxable_Pay=3500,Income_Tax=2500,Net_Pay=55000000 where Name='Bill';
 update employee_payroll set Basic_Pay=70000, Deductions=35000, Taxable_Pay=4000,Income_Tax=4500,Net_Pay=75000000 where Name='Mark';
+
+select * from employee_payroll
+
+--UC10 Make Richu as part of sales & Marketing
+update employee_payroll set Department='Sales & Marketing' where Name='Terisa';
+select * from employee_payroll;

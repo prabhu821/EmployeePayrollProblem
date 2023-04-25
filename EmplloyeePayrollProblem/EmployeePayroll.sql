@@ -62,3 +62,16 @@ select * from employee_payroll
 --UC10 Make Richu as part of sales & Marketing
 update employee_payroll set Department='Sales & Marketing' where Name='Terisa';
 select * from employee_payroll;
+
+--UC11 Implements the ER Diagram into payroll service DB
+
+create table employee_payroll1 (ID int Identity(1,1)Primary Key, EmpID int, Department varchar(100) NOT NULL, DepartmentId int,
+ FOREIGN KEY (EmpID) REFERENCES employee_payroll(Id));
+
+insert into employee_payroll1 (EmpId, Department) values ('1', 'Finance'),('2', 'Sales'), ('3', 'Marketing')
+select * from employee_payroll1
+
+alter table employee_payroll1 add Name varchar(100), Gender varchar (1), Salary float
+update employee_payroll1 set Name = 'Jimmy', DepartmentId = 12345, Gender = 'M', Salary = 20000 where Department = 'Finance'
+update employee_payroll1 set Name = 'Satish', DepartmentId = 12346, Gender = 'M', Salary = 24000 where Department = 'Sales'
+update employee_payroll1 set Name = 'Aurora', DepartmentId = 12347, Gender = 'F', Salary = 35000 where Department = 'Marketing'
